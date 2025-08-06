@@ -1,11 +1,11 @@
 *{
-    margin: 0;
-    padding: 0;
+    margin: 15px;
+    padding: 15px;
     box-sizing: border-box;
 }
 
 body{
-    background-color: rgba(246, 184, 215, 0.234);
+    background-color: rgba(243, 224, 234, 0.234);
     text-align: center;
     line-height: 3.1;
 }
@@ -28,7 +28,7 @@ body{
 }
 
 .accent{
-    color: mistyrose;
+    color:black
 }
 
 .grid{
@@ -40,14 +40,14 @@ body{
 }
 
 .grid div{
-    padding: 5px;
+    padding: 20px;
     border-radius: 40px; 
-    background-color: mistyrose;
-    width: 300px;
+    background-color:darkgrey
+    width: 450px;
 }
 
 
 @media (max-width: 768px){
-    body{background-color: floralwhite;}
+    body{background-color: rgb(234, 231, 227);}
 }
 
