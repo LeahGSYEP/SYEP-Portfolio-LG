@@ -5,11 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Leah's Portfolio</title>
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-     <link href="style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <style>
+      #time-day-display {
+        margin-left: auto;
+        font-weight: 600;
+        font-size: 1rem;
+        color: #333;
+        display: flex;
+        align-items: center;
+        height: 100%;
+      }
+    </style>
 </head>
-
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
@@ -25,20 +35,24 @@
         <a class="nav-link" href="index.html#about">About Me</a>
         <a class="nav-link" href="index.html#skills">My Skills</a>
         <a class="nav-link" href="testimonials.html">Testimonials</a>
-    </div>
+      </div>
+      <!-- Time and day display -->
+      <div id="time-day-display"></div>
     </div>
   </div>
 </nav>
+
 <body>
     <section id="home" class="hero">
-        <h2>Welcome, I am Leah Guthrie</span></h2>
+        <h2>Welcome, I am Leah Guthrie</h2>
         <p>I'm a high school student learning web development!</p>
     </section>
 
     <section id="about" class="section"> 
         <h2> About Me</h2>
-        <p>Greetings, while entering my website, you should get to know me. My name is Leah Guthrie, and I am a student in high school. My main focus is to excel in school and really think about what career is fit for me in the future. My interests are cooking, cheerleading, and dancing. In high school I would really put myself out there with dance and cheer, and I'm not a shy person. I wasn't always like this, but once I entered freshman year, I knew I had to step out of my comfort zone. I still have a long way to go, but I am interested in where my high school journey takes me. </p>
+        <p> Greetings, My name is Leah Guthrie. I am a high school student in the Bronx, New York, learning web development. If you want to know more about Leah, you should know that I am very determined, hard-working, and helpful. To me these are the strongest attributes about myself because I always push myself to get any task done and do it to the best of my ability while also priding myself in being there for other people because I can always learn from others as much as they can learn from me. I am an aspiring web developer, and I hope to become more skilled in my coding and learn more techniques. </p>
     </section>
+
     <section id="skills" class="section"> 
         <h2>My Skills</h2>
         <div class="grid">
@@ -48,21 +62,46 @@
         </div>
     </section>
 
-      <section id="projects" class="section">
-        <h2> My Projects</h2>
-      </section>
-      
-
-      <section id="contact" class="section">
+    <section id="contact" class="section">
         <h2> Contact</h2>
         <p> Feel free to reach out to me via email
             <a href="mailto:leahguthrie71@gmail.com">leahguthrie71@gmail.com </a>
         </p>
-      </section>
+    </section>
 
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-      <script src="script.js"></script>
-  
-    </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+    <script>
+      function updateTimeAndDay() {
+        const now = new Date();
+
+        // Get day of the week
+        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const dayName = days[now.getDay()];
+
+        // Get hours, minutes, seconds
+        let hours = now.getHours();
+        let minutes = now.getMinutes();
+        let seconds = now.getSeconds();
+
+        // Format to 2 digits
+        hours = hours < 10 ? '0' + hours : hours;
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        seconds = seconds < 10 ? '0' + seconds : seconds;
+
+        const timeString = `${hours}:${minutes}:${seconds}`;
+        const display = `${dayName}, ${timeString}`;
+
+        document.getElementById('time-day-display').textContent = display;
+      }
+
+      // Update immediately and then every second
+      updateTimeAndDay();
+      setInterval(updateTimeAndDay, 1000);
+    </script>
+
+    <script src="script.js"></script>
+
+</body>
 
 </html>
