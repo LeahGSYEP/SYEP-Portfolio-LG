@@ -146,10 +146,14 @@ p {
  margin: 0 auto;
  max-width: 1200px;
 }
+body {
+  background-color: rgb(234, 231, 227);
+}
+
 @media screen and (min-width: 992px) {
- .section-center {
-   width: 95vw;
- }
+  .section-center {
+    width: 95vw;
+  }
 }
 main {
  min-height: 1000vh;
