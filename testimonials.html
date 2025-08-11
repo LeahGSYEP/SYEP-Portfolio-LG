@@ -2,31 +2,36 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Leah's portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
-    <link href="style2.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Leah's portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="style2.css" rel="stylesheet" />
 </head>
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      LeahG
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-        <a class="nav-link" href="index.html#about">About Me</a>
-        <a class="nav-link" href="index.html#skills">My Skills</a>
-        <a class="nav-link" href="testimonials.html">Testimonials</a>
-      </div>
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            LeahG
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                <a class="nav-link" href="index.html#about">About Me</a>
+                <a class="nav-link" href="index.html#skills">Skills</a>
+                <a class="nav-link" href="index.html#skills">Contact</a>
+                <a class="nav-link" href="testimonials.html">Testimonials</a>
+            </div>
+            <!-- Time and day display -->
+            <div id="time-day-display" class="ms-auto fw-semibold"></div>
+        </div>
     </div>
-  </div>
 </nav>
 
 <body>
@@ -39,38 +44,113 @@
 
             <article class="review">
                 <div class="img-container">
-                    <img src="#" id="person-img"/>
+                    <img src="#" id="person-img" alt="Person photo" />
                 </div>
 
                 <h4 id="author">Insert Name Here</h4>
-                <p id="job">Insert Job Here</p>
+                <p id="job">Insert Job here</p>
                 <p id="info">
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."    
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                 </p>
 
                 <div class="button-container">
-                    <button class="prev-btn">
+                    <button class="prev-btn" aria-label="Previous review">
                         <i class="fas fa-chevron-left"></i>
                     </button>
 
-                     <button class="next-btn">
+                    <button class="next-btn" aria-label="Next review">
                         <i class="fas fa-chevron-right"></i>
                     </button>
-
                 </div>
             </article>
         </section>
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 
-    
+    <script>
+        // Time & date updater
+        function updateTimeAndDay() {
+            const now = new Date();
 
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const dayName = days[now.getDay()];
 
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
 
+            hours = hours < 10 ? '0' + hours : hours;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
 
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+            const timeString = `${hours}:${minutes}:${seconds}`;
+            const display = `${dayName}, ${timeString}`;
+
+            document.getElementById('time-day-display').textContent = display;
+        }
+
+        updateTimeAndDay();
+        setInterval(updateTimeAndDay, 1000);
+
+        // Testimonials data and functionality
+        const reviews = [
+            {
+                id: 1,
+                name: 'Edwin Amador',
+                img: 'https://mail.google.com/mail/u/0?ui=2&ik=742eff6900&attid=0.1&permmsgid=msg-f:1840200981121990641&th=1989b50ae319fff1&view=fimg&fur=ip&permmsgid=msg-f:1840200981121990641&sz=s0-l75-ft&attbid=ANGjdJ9RrKfLoIoResytHhKPWNBwy5xri3Gzf4GE2CbvAol2bB4-nOEBUgPj-_yf5kM8ZoVHAHmdS1BRROt7w5M24MYg9aowJtPQbpT_upmsKn_mCFXD4GPv1yq7xfM&disp=emb&realattid=1989b505d00823a67c81&zw',
+                job: 'Teacher',
+                text: `As students begin learning Spanish, Leah Brown often developed greater resilience and open-mindedness by embracing the challenges of a new linguistic system. Throughout the school year, this academic pursuit cultivates personal growth, fostering patience through the complexities of grammar and building confidence with each successful conversation. By year's end, Leah not only gained a new language but also a broadened cultural perspective and a more empathetic understanding of the world. Proof of this, she passed the Spanish class with honors.`
+            },
+            {
+                id: 2,
+                name: 'Jermaine Guthrie',
+                img: 'https://mail.google.com/mail/u/1?ui=2&ik=aa3e55d1f2&attid=0.1&permmsgid=msg-f:1840203388215287940&th=1989b73b550ae084&view=fimg&fur=ip&permmsgid=msg-f:1840203388215287940&sz=s0-l75-ft&attbid=ANGjdJ-lYPNaIoFfmuJ59ayUDGNTDv9TEnzZN2T9xFN9Q6wFF5wulG5auPanzTe6uJSSw3VPFqDmQ3_3P3LgYMJi3e2mY5B_DDdKdoJ6VC493RciI_po0xRMQR85AC0&disp=emb&realattid=1989b7373e99eff0fd31&zw',
+                job: 'Senior Wealth Advisor',
+                text: 'Leah is my very smart, kind, and beautiful niece. We take great pride in her academic success and are certain she has an exceptionally bright future ahead of her. She also has a warm and approachable personality that makes her easy to talk to. My daughter, who is three years younger than Leah, often tells me that she is comfortable confiding in Leah about anything, which speaks to Leah\'s caring nature and the trust she inspires in those around her. My daughter looks up to Leah not just as a cousin but as a role model.'
+
+            }
+        ];
+
+        const img = document.getElementById('person-img');
+        const author = document.getElementById('author');
+        const job = document.getElementById('job');
+        const info = document.getElementById('info');
+
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+
+        let currentItem = 0;
+
+        function showPerson(index) {
+            const item = reviews[index];
+            img.src = item.img;
+            author.textContent = item.name;
+            job.textContent = item.job;
+            info.textContent = item.text;
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            showPerson(currentItem);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentItem++;
+            if (currentItem > reviews.length - 1) {
+                currentItem = 0;
+            }
+            showPerson(currentItem);
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentItem--;
+            if (currentItem < 0) {
+                currentItem = reviews.length - 1;
+            }
+            showPerson(currentItem);
+        });
+    </script>
 </body>
 
 </html>
