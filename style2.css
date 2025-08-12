@@ -122,3 +122,10 @@ button:focus {
   outline: none;
   box-shadow: 0 0 0 3px floralwhite;
 }
+
+@media (max-width: 768px) {
+  body {
+    background-color: rgb(234, 231, 227);
+  }
+}
+
