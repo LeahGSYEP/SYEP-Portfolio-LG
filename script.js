@@ -5,7 +5,7 @@ const reviews = [
     name: 'Edwin Amador',
     img: 'sir.jpeg',
     job: 'Teacher',
-    text: `As students begin learning Spanish, Leah Brown often developed greater resilience and open-mindedness by embracing the challenges of a new linguistic system. Throughout the school year, this academic pursuit cultivates personal growth, fostering patience through the complexities of grammar and building confidence with each successful conversation. By year's end, Leah not only gained a new language but also a broadened cultural perspective and a more empathetic understanding of the world. Proof of this, she passed the Spanish class with honors.`
+    text: `As students begin learning Spanish, Leah Guthrie often developed greater resilience and open-mindedness by embracing the challenges of a new linguistic system. Throughout the school year, this academic pursuit cultivates personal growth, fostering patience through the complexities of grammar and building confidence with each successful conversation. By year's end, Leah not only gained a new language but also a broadened cultural perspective and a more empathetic understanding of the world. Proof of this, she passed the Spanish class with honors.`
   },
   {
     id: 2,
