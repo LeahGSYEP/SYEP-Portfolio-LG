@@ -11,6 +11,7 @@ const reviews = [
     id: 2,
     name: 'Jermaine Guthrie',
     img: 'sir2.jpeg',
+    job: 'Senior Wealth Advisor',
     text: 'Leah is my very smart, kind, and beautiful niece. We take great pride in her academic success and are certain she has an exceptionally bright future ahead of her. She also has a warm and approachable personality that makes her easy to talk to. My daughter, who is three years younger than Leah, often tells me that she is comfortable confiding in Leah about anything, which speaks to Leah\'s caring nature and the trust she inspires in those around her. My daughter looks up to Leah not just as a cousin but as a role model.'
   }
 ];
