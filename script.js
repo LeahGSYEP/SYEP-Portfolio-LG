@@ -1,3 +1,4 @@
+// Array of reviews
 const reviews = [
   {
     id: 1,
@@ -25,38 +26,43 @@ const nextBtn = document.querySelector('.next-btn');
 
 let currentItem = 0;
 
+// Function to display a person's testimonial
 function showPerson(index) {
   const item = reviews[index];
-  img.src = item.img;
-  author.textContent = item.name;
-  job.textContent = item.job;
-  info.textContent = item.text;
+  img.src = item.img;  // Set the image source
+  author.textContent = item.name;  // Set the author's name
+  job.textContent = item.job;  // Set the author's job title
+  info.textContent = item.text;  // Set the testimonial text
 }
 
+// Function to handle fading transition and show the next/prev testimonial
 function fadeAndShow(index) {
   container.classList.add('fade');
   setTimeout(() => {
     showPerson(index);
     container.classList.remove('fade');
-  });
+  }, 300);  // Adjust the fade-out time (in ms)
 }
 
+// Event listener to change to the first testimonial when page loads
 window.addEventListener('DOMContentLoaded', () => {
   showPerson(currentItem);
 });
 
+// Event listener for "next" button
 nextBtn.addEventListener('click', () => {
   currentItem++;
   if (currentItem > reviews.length - 1) {
-    currentItem = 0;
+    currentItem = 0;  // Loop back to the first review
   }
   fadeAndShow(currentItem);
 });
 
+// Event listener for "previous" button
 prevBtn.addEventListener('click', () => {
   currentItem--;
   if (currentItem < 0) {
-    currentItem = reviews.length - 1;
+    currentItem = reviews.length - 1;  // Loop to the last review
   }
   fadeAndShow(currentItem);
 });

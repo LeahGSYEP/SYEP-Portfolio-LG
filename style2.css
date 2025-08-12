@@ -1,27 +1,29 @@
-/* style2.css */
-
+/* General reset and box-sizing */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Body styling */
 body {
   font-family: Arial, sans-serif;
   background-color: rgba(209, 167, 189, 0.234);
   padding: 20px;
 }
 
+/* Main container styling */
 .container {
   max-width: 600px;
   margin: 40px auto;
   background: white;
   padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
+/* Title and underline styling */
 .title h2 {
   margin-bottom: 0;
 }
@@ -34,29 +36,37 @@ body {
   border-radius: 2px;
 }
 
+/* Review Section */
 .review {
   transition: opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 1;
 }
 
 .review.fade {
-  opacity: 0;
+  opacity: 0; /* Fade effect */
 }
 
+/* Image container */
 .img-container {
   width: 150px;
   height: 150px;
   margin: 0 auto 1rem;
   border-radius: 50%;
   overflow: hidden;
-  border: 4px solid ;
+  border: 4px solid rgba(209, 167, 189, 0.5); /* Light border color */
 }
 
+/* Person image styling */
 #person-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
+/* Author name styling */
 #author {
   font-weight: 700;
   font-size: 1.3rem;
@@ -64,28 +74,32 @@ body {
   margin: 0.5rem 0;
 }
 
+/* Job title styling */
 #job {
-  color:black;
+  color: black;
   text-transform: uppercase;
   font-size: 0.85rem;
   margin-bottom: 1rem;
   letter-spacing: 2px;
 }
 
+/* Review text styling */
 #info {
-  color:black;
+  color: black;
   font-size: 1rem;
   line-height: 1.5;
   margin-bottom: 2rem;
   white-space: pre-line;
 }
 
+/* Button container styling */
 .button-container {
   display: flex;
   justify-content: center;
   gap: 1rem;
 }
 
+/* Button styling */
 button {
   background: #f1d2eb;
   border: none;
@@ -94,14 +108,16 @@ button {
   border-radius: 5px;
   font-size: 1.2rem;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, box-shadow 0.3s ease; /* Button hover and focus effects */
 }
 
+/* Button hover effect */
 button:hover {
   background: floralwhite;
   color: #dec1dc;
 }
 
+/* Button focus effect */
 button:focus {
   outline: none;
   box-shadow: 0 0 0 3px floralwhite;
